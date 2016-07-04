@@ -7,23 +7,19 @@ create_trie <- function(keys, values){
   switch(class(values)[1],
          "numeric" = {
            output <- radix_create_double(keys, values)
-           output_classes[1] <- "numeric_trie"
-           break
+           output_classes[2] <- "numeric_trie"
          },
          "integer" = {
            output <- radix_create_int(keys, values)
-           output_classes[1] <- "integer_trie"
-           break
+           output_classes[2] <- "integer_trie"
          },
          "character" = {
            output <- radix_create_str(keys, values)
-           output_classes[1] <- "string_trie"
-           break
+           output_classes[2] <- "string_trie"
          },
          "logical" = {
            output <- radix_create_bool(keys, values)
-           output_classes[1] <- "logical_trie"
-           break
+           output_classes[2] <- "logical_trie"
          },
          stop("'values' must be a numeric, integer, character or logical vector"))
 
