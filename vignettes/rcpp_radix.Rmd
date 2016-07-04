@@ -1,0 +1,16 @@
+---
+title: "Radix trees in Rcpp"
+author: "Oliver Keyes"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Radix trees in Rcpp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Radix trees
+
+## Constructing trees
+
+## Matching against trees
