@@ -1,4 +1,17 @@
-create_trie <- function(keys, values){
+#'@title Create a Trie
+#'@description \code{trie_create} creates a trie (a key-value store optimised
+#'for matching) out of a provided character vector of keys, and a numeric,
+#'character, logical or integer vector of values (both the same length).
+#'
+#'@param keys a character vector containing the keys to match against
+#'
+#'@param values an atomic vector of any type, containing the values to pair with
+#'\code{keys}. Must be the same length as \code{keys}.
+#'
+#'@return a `trie` object.
+#'
+#'@export
+trie_create <- function(keys, values){
   stopifnot(length(keys) == length(values))
   stopifnot(is.character(keys))
   output <- NULL
