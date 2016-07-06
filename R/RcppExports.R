@@ -17,6 +17,38 @@ radix_create_bool <- function(keys, values) {
     .Call('triebeard_radix_create_bool', PACKAGE = 'triebeard', keys, values)
 }
 
+get_keys_str <- function(radix) {
+    .Call('triebeard_get_keys_str', PACKAGE = 'triebeard', radix)
+}
+
+get_keys_int <- function(radix) {
+    .Call('triebeard_get_keys_int', PACKAGE = 'triebeard', radix)
+}
+
+get_keys_bool <- function(radix) {
+    .Call('triebeard_get_keys_bool', PACKAGE = 'triebeard', radix)
+}
+
+get_keys_double <- function(radix) {
+    .Call('triebeard_get_keys_double', PACKAGE = 'triebeard', radix)
+}
+
+get_values_str <- function(radix) {
+    .Call('triebeard_get_values_str', PACKAGE = 'triebeard', radix)
+}
+
+get_values_int <- function(radix) {
+    .Call('triebeard_get_values_int', PACKAGE = 'triebeard', radix)
+}
+
+get_values_bool <- function(radix) {
+    .Call('triebeard_get_values_bool', PACKAGE = 'triebeard', radix)
+}
+
+get_values_double <- function(radix) {
+    .Call('triebeard_get_values_double', PACKAGE = 'triebeard', radix)
+}
+
 radix_len_str <- function(radix) {
     .Call('triebeard_radix_len_str', PACKAGE = 'triebeard', radix)
 }

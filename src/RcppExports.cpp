@@ -53,6 +53,94 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// get_keys_str
+std::vector < std::string > get_keys_str(SEXP radix);
+RcppExport SEXP triebeard_get_keys_str(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_keys_str(radix));
+    return __result;
+END_RCPP
+}
+// get_keys_int
+std::vector < std::string > get_keys_int(SEXP radix);
+RcppExport SEXP triebeard_get_keys_int(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_keys_int(radix));
+    return __result;
+END_RCPP
+}
+// get_keys_bool
+std::vector < std::string > get_keys_bool(SEXP radix);
+RcppExport SEXP triebeard_get_keys_bool(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_keys_bool(radix));
+    return __result;
+END_RCPP
+}
+// get_keys_double
+std::vector < std::string > get_keys_double(SEXP radix);
+RcppExport SEXP triebeard_get_keys_double(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_keys_double(radix));
+    return __result;
+END_RCPP
+}
+// get_values_str
+std::vector < std::string > get_values_str(SEXP radix);
+RcppExport SEXP triebeard_get_values_str(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_values_str(radix));
+    return __result;
+END_RCPP
+}
+// get_values_int
+std::vector < int > get_values_int(SEXP radix);
+RcppExport SEXP triebeard_get_values_int(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_values_int(radix));
+    return __result;
+END_RCPP
+}
+// get_values_bool
+std::vector < bool > get_values_bool(SEXP radix);
+RcppExport SEXP triebeard_get_values_bool(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_values_bool(radix));
+    return __result;
+END_RCPP
+}
+// get_values_double
+std::vector < double > get_values_double(SEXP radix);
+RcppExport SEXP triebeard_get_values_double(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(get_values_double(radix));
+    return __result;
+END_RCPP
+}
 // radix_len_str
 int radix_len_str(SEXP radix);
 RcppExport SEXP triebeard_radix_len_str(SEXP radixSEXP) {

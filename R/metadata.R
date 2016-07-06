@@ -1,6 +1,6 @@
 #'@export
 length.numeric_trie <- function(x){
-  return(radix_len_str(x))
+  return(radix_len_double(x))
 }
 
 #'@export
@@ -34,8 +34,9 @@ str.trie <- function(object){
   return(invisible())
 }
 
+#'@export
 print.trie <- function(x){
-
+  cat("Trie object\n")
+  cat(paste("Size:", length(x), "\n"))
+  head(x)
 }
-
-dput

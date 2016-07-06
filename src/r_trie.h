@@ -38,7 +38,18 @@ class r_trie {
       return output;
     }
 
-    std::vector < T > get_values();
+    std::vector < T > get_values(){
+      int input_size = size();
+      int iter = 0;
+      std::vector < T > output(input_size);
+
+      typename radix_tree< std::string, T >::iterator it;
+      for (it = radix.begin(); it != radix.end(); ++it) {
+        output[iter] = it->second;
+        iter++;
+      }
+      return output;
+    }
 
     bool insert_values(std::vector < std::string > keys, std::vector < T > values){
       try{
