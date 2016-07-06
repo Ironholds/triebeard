@@ -185,3 +185,51 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// longest_str
+CharacterVector longest_str(SEXP radix, CharacterVector to_match);
+RcppExport SEXP triebeard_longest_str(SEXP radixSEXP, SEXP to_matchSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
+    __result = Rcpp::wrap(longest_str(radix, to_match));
+    return __result;
+END_RCPP
+}
+// longest_bool
+LogicalVector longest_bool(SEXP radix, CharacterVector to_match);
+RcppExport SEXP triebeard_longest_bool(SEXP radixSEXP, SEXP to_matchSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
+    __result = Rcpp::wrap(longest_bool(radix, to_match));
+    return __result;
+END_RCPP
+}
+// longest_int
+IntegerVector longest_int(SEXP radix, CharacterVector to_match);
+RcppExport SEXP triebeard_longest_int(SEXP radixSEXP, SEXP to_matchSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
+    __result = Rcpp::wrap(longest_int(radix, to_match));
+    return __result;
+END_RCPP
+}
+// longest_double
+NumericVector longest_double(SEXP radix, CharacterVector to_match);
+RcppExport SEXP triebeard_longest_double(SEXP radixSEXP, SEXP to_matchSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
+    __result = Rcpp::wrap(longest_double(radix, to_match));
+    return __result;
+END_RCPP
+}

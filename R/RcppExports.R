@@ -65,3 +65,19 @@ radix_len_double <- function(radix) {
     .Call('triebeard_radix_len_double', PACKAGE = 'triebeard', radix)
 }
 
+longest_str <- function(radix, to_match) {
+    .Call('triebeard_longest_str', PACKAGE = 'triebeard', radix, to_match)
+}
+
+longest_bool <- function(radix, to_match) {
+    .Call('triebeard_longest_bool', PACKAGE = 'triebeard', radix, to_match)
+}
+
+longest_int <- function(radix, to_match) {
+    .Call('triebeard_longest_int', PACKAGE = 'triebeard', radix, to_match)
+}
+
+longest_double <- function(radix, to_match) {
+    .Call('triebeard_longest_double', PACKAGE = 'triebeard', radix, to_match)
+}
+

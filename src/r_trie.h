@@ -8,13 +8,14 @@ template <class T>
 class r_trie {
 
   private:
-    radix_tree<std::string, T> radix;
 
     int size(){
       return std::distance(radix.begin(), radix.end());
     }
 
   public:
+
+    radix_tree<std::string, T> radix;
 
     int radix_size;
 
