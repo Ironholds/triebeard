@@ -33,3 +33,9 @@ str.trie <- function(object){
   ))
   return(invisible())
 }
+
+print.trie <- function(x){
+
+}
+
+dput
