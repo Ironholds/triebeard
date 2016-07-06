@@ -48,7 +48,6 @@ LogicalVector longest_bool(SEXP radix, CharacterVector to_match){
   return output;
 }
 
-
 //[[Rcpp::export]]
 IntegerVector longest_int(SEXP radix, CharacterVector to_match){
   r_trie <int>* rt_ptr = (r_trie <int> *) R_ExternalPtrAddr(radix);

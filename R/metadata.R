@@ -33,10 +33,3 @@ str.trie <- function(object){
   ))
   return(invisible())
 }
-
-#'@export
-print.trie <- function(x){
-  cat("Trie object\n")
-  cat(paste("Size:", length(x), "\n"))
-  head(x)
-}
