@@ -1,17 +1,22 @@
-#include <radix.h>
+#include "r_trie.h"
 
-void finaliseRadixStr(radix_tree <std::string, std::string>* radix_inst){}
+#ifndef __RTRIE_TYPES__
+#define __RTRIE_TYPES__
 
-typedef Rcpp::XPtr<radix_tree <std::string, std::string>, Rcpp::PreserveStorage, finaliseRadixStr> XPtrRadixStr;
+void finaliseRadixStr(r_trie <std::string>* radix_inst){}
 
-void finaliseRadixInt(radix_tree <std::string, int>* radix_inst){}
+typedef Rcpp::XPtr<r_trie <std::string>, Rcpp::PreserveStorage, finaliseRadixStr> XPtrRadixStr;
 
-typedef Rcpp::XPtr<radix_tree <std::string, int>, Rcpp::PreserveStorage, finaliseRadixInt> XPtrRadixInt;
+void finaliseRadixInt(r_trie <int>* radix_inst){}
 
-void finaliseRadixBool(radix_tree <std::string, bool>* radix_inst){}
+typedef Rcpp::XPtr<r_trie <int>, Rcpp::PreserveStorage, finaliseRadixInt> XPtrRadixInt;
 
-typedef Rcpp::XPtr<radix_tree <std::string, bool>, Rcpp::PreserveStorage, finaliseRadixBool> XPtrRadixBool;
+void finaliseRadixBool(r_trie <bool>* radix_inst){}
 
-void finaliseRadixDouble(radix_tree <std::string, double>* radix_inst){}
+typedef Rcpp::XPtr<r_trie <bool>, Rcpp::PreserveStorage, finaliseRadixBool> XPtrRadixBool;
 
-typedef Rcpp::XPtr<radix_tree <std::string, double>, Rcpp::PreserveStorage, finaliseRadixDouble> XPtrRadixDouble;
+void finaliseRadixDouble(r_trie <double>* radix_inst){}
+
+typedef Rcpp::XPtr<r_trie <double>, Rcpp::PreserveStorage, finaliseRadixDouble> XPtrRadixDouble;
+
+#endif
