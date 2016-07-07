@@ -1,4 +1,4 @@
-#'@title Create a Trie
+#'@title Trie Getters
 #'@description "Getters" for the data stored in a trie object. \code{get_keys}
 #' gets the keys, \code{get_values} gets the values.
 #'

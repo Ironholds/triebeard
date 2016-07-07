@@ -12,7 +12,7 @@
 \alias{get_values.numeric_trie}
 \alias{get_values.string_trie}
 \alias{getters}
-\title{Create a Trie}
+\title{Trie Getters}
 \usage{
 get_keys(trie)
 

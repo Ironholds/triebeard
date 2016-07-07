@@ -20,7 +20,6 @@ int radix_len_int(SEXP radix){
   return radix_len<int>(radix);
 }
 
-
 //[[Rcpp::export]]
 int radix_len_bool(SEXP radix){
   return radix_len<bool>(radix);
