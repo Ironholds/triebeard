@@ -66,7 +66,7 @@ longest_match.logical_trie <- function(trie, to_match){
 #'for longest and greedy matching, respectively.
 #'
 #'@export
-prefix_match <- function(trie, match_text){
+prefix_match <- function(trie, to_match){
   stopifnot("trie" %in% class(trie))
   UseMethod("prefix_match", trie)
 }
@@ -114,7 +114,7 @@ prefix_match.logical_trie <- function(trie, to_match){
 #'for longest and prefix matching, respectively.
 #'
 #'@export
-greedy_match <- function(trie, match_text){
+greedy_match <- function(trie, to_match){
   stopifnot("trie" %in% class(trie))
   UseMethod("greedy_match", trie)
 }

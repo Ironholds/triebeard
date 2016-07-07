@@ -22,7 +22,6 @@ testthat::test_that("String tries can be altered", {
   testthat::expect_true(length(trie) == original_length)
 })
 
-
 testthat::test_that("Integer tries can be altered", {
   trie <- create_trie("foo", 1)
   original_length <- length(trie)
