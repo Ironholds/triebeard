@@ -25,5 +25,22 @@ trie_add.logical_trie <- function(trie, keys, values){
 }
 
 trie_remove <- function(trie, keys){
+  stopifnot(is.character(keys))
+  UseMethod("trie_remove", trie)
+}
 
+trie_remove.string_trie <- function(trie, keys){
+  return(remove_trie_str(trie, keys))
+}
+
+trie_remove.numeric_trie <- function(trie, keys){
+  return(remove_trie_double(trie, keys))
+}
+
+trie_remove.integer_trie <- function(trie, keys){
+  return(remove_trie_int(trie, keys))
+}
+
+trie_remove.logical_trie <- function(trie, keys){
+  return(remove_trie_bool(trie, keys))
 }
