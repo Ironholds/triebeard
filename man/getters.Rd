@@ -2,37 +2,13 @@
 % Please edit documentation in R/get.R
 \name{getters}
 \alias{get_keys}
-\alias{get_keys.integer_trie}
-\alias{get_keys.logical_trie}
-\alias{get_keys.numeric_trie}
-\alias{get_keys.string_trie}
 \alias{get_values}
-\alias{get_values.integer_trie}
-\alias{get_values.logical_trie}
-\alias{get_values.numeric_trie}
-\alias{get_values.string_trie}
 \alias{getters}
 \title{Trie Getters}
 \usage{
 get_keys(trie)
 
 get_values(trie)
-
-\method{get_keys}{numeric_trie}(trie)
-
-\method{get_keys}{integer_trie}(trie)
-
-\method{get_keys}{string_trie}(trie)
-
-\method{get_keys}{logical_trie}(trie)
-
-\method{get_values}{numeric_trie}(trie)
-
-\method{get_values}{integer_trie}(trie)
-
-\method{get_values}{string_trie}(trie)
-
-\method{get_values}{logical_trie}(trie)
 }
 \arguments{
 \item{trie}{A trie object, created with \code{\link{create_trie}}.}

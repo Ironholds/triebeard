@@ -29,20 +29,20 @@ create_trie <- function(keys, values){
   output_classes <- c("trie", NA)
 
   switch(class(values)[1],
-         "numeric" = {
-           output <- radix_create_double(keys, values)
-           output_classes[2] <- "numeric_trie"
-         },
-         "integer" = {
-           output <- radix_create_int(keys, values)
-           output_classes[2] <- "integer_trie"
-         },
          "character" = {
-           output <- radix_create_str(keys, values)
+           output <- radix_create_string(keys, values)
            output_classes[2] <- "string_trie"
          },
+         "integer" = {
+           output <- radix_create_integer(keys, values)
+           output_classes[2] <- "integer_trie"
+         },
+         "numeric" = {
+           output <- radix_create_numeric(keys, values)
+           output_classes[2] <- "numeric_trie"
+         },
          "logical" = {
-           output <- radix_create_bool(keys, values)
+           output <- radix_create_logical(keys, values)
            output_classes[2] <- "logical_trie"
          },
          stop("'values' must be a numeric, integer, character or logical vector"))

@@ -20,8 +20,12 @@ with an entry-to-compare of "binder", will match to "bind".
 }
 \examples{
 trie <- create_trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
-                   values = c(1, 2, 3, 4, 5, 6))
+                   values = c("afford", "affair", "available", "binary", "bind", "blind"))
 longest_match(trie, "binder")
 
+}
+\seealso{
+\code{\link{prefix_match}} and \code{\link{greedy_match}}
+for prefix and greedy matching, respectively.
 }
 

@@ -7,13 +7,11 @@ using namespace Rcpp;
 template <class T>
 class r_trie {
 
-  private:
+  public:
 
     int size(){
       return std::distance(radix.begin(), radix.end());
     }
-
-  public:
 
     radix_tree<std::string, T> radix;
 
@@ -52,31 +50,17 @@ class r_trie {
       return output;
     }
 
-    bool insert_values(std::vector < std::string > keys, std::vector < T > values){
-      try{
-        for(unsigned int i = 0; i < keys.size(); i++){
-          radix[keys[i]] = values[i];
-        }
-      } catch(...){
-        return false;
-        radix_size = size();
-
-      }
-      return true;
-      radix_size = size();
+    void insert_value(std::string key, T value){
+      radix[key] = value;
     }
 
-    bool remove_values(std::vector < std::string > keys){
-      try{
-        for(unsigned int i = 0; i < keys.size(); i++){
-          radix.erase(keys[i]);
+    void remove_values(CharacterVector keys){
+      for(unsigned int i = 0; i < keys.size(); i++){
+        if(keys[i] != NA_STRING){
+          radix.erase(Rcpp::as<std::string>(keys[i]));
         }
-      } catch(...){
-        radix_size = size();
-        return false;
       }
       radix_size = size();
-      return true;
     }
 };
 

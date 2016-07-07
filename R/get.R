@@ -24,50 +24,42 @@ get_values <- function(trie){
   UseMethod("get_values", trie)
 }
 
-#'@rdname getters
-#'@export
-get_keys.numeric_trie <- function(trie){
-  return(get_keys_double(trie))
-}
-
-#'@rdname getters
-#'@export
-get_keys.integer_trie <- function(trie){
-  return(get_keys_int(trie))
-}
-
-#'@rdname getters
 #'@export
 get_keys.string_trie <- function(trie){
-  return(get_keys_str(trie))
+  return(get_keys_string(trie))
 }
 
-#'@rdname getters
+#'@export
+get_keys.integer_trie <- function(trie){
+  return(get_keys_integer(trie))
+}
+
+#'@export
+get_keys.numeric_trie <- function(trie){
+  return(get_keys_numeric(trie))
+}
+
 #'@export
 get_keys.logical_trie <- function(trie){
-  return(get_keys_bool(trie))
+  return(get_keys_logical(trie))
 }
 
-#'@rdname getters
-#'@export
-get_values.numeric_trie <- function(trie){
-  return(get_values_double(trie))
-}
-
-#'@rdname getters
-#'@export
-get_values.integer_trie <- function(trie){
-  return(get_values_int(trie))
-}
-
-#'@rdname getters
 #'@export
 get_values.string_trie <- function(trie){
-  return(get_values_str(trie))
+  return(get_values_string(trie))
 }
 
-#'@rdname getters
+#'@export
+get_values.integer_trie <- function(trie){
+  return(get_values_integer(trie))
+}
+
+#'@export
+get_values.numeric_trie <- function(trie){
+  return(get_values_numeric(trie))
+}
+
 #'@export
 get_values.logical_trie <- function(trie){
-  return(get_values_bool(trie))
+  return(get_values_logical(trie))
 }

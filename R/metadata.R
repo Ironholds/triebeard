@@ -1,21 +1,21 @@
 #'@export
-length.numeric_trie <- function(x){
-  return(radix_len_double(x))
+length.string_trie <- function(x){
+  return(radix_len_string(x))
 }
 
 #'@export
 length.integer_trie <- function(x){
-  return(radix_len_int(x))
+  return(radix_len_integer(x))
 }
 
 #'@export
-length.string_trie <- function(x){
-  return(radix_len_str(x))
+length.numeric_trie <- function(x){
+  return(radix_len_numeric(x))
 }
 
 #'@export
-length.bool_trie <- function(x){
-  return(radix_len_bool(x))
+length.logical_trie <- function(x){
+  return(radix_len_logical(x))
 }
 
 #'@export
