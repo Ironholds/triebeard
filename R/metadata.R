@@ -24,7 +24,7 @@ dim.trie <- function(x){
 }
 
 #'@export
-str.trie <- function(object){
+str.trie <- function(object, ...){
   obj_len <- length(object)
   cat(paste0(
     class(object)[3],

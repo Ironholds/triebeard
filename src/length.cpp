@@ -1,26 +1,31 @@
 #include "r_trie.h"
 
+template <typename T>
+static inline int radix_len(SEXP radix){
+  r_trie <T>* rt_ptr = (r_trie <T> *) R_ExternalPtrAddr(radix);
+  
+  if (rt_ptr == NULL)
+    stop("invalid trie object; pointer is NULL");
+  
+  return rt_ptr->radix_size;
+}
+
 //[[Rcpp::export]]
 int radix_len_str(SEXP radix){
-  r_trie <std::string>* rt_ptr = (r_trie <std::string> *) R_ExternalPtrAddr(radix);
-  return rt_ptr->radix_size;
+  return radix_len<std::string>(radix);
 }
 
 //[[Rcpp::export]]
 int radix_len_int(SEXP radix){
-  r_trie <int>* rt_ptr = (r_trie <int> *) R_ExternalPtrAddr(radix);
-  return rt_ptr->radix_size;
+  return radix_len<int>(radix);
 }
-
 
 //[[Rcpp::export]]
 int radix_len_bool(SEXP radix){
-  r_trie <bool>* rt_ptr = (r_trie <bool> *) R_ExternalPtrAddr(radix);
-  return rt_ptr->radix_size;
+  return radix_len<bool>(radix);
 }
 
 //[[Rcpp::export]]
 int radix_len_double(SEXP radix){
-  r_trie <double>* rt_ptr = (r_trie <double> *) R_ExternalPtrAddr(radix);
-  return rt_ptr->radix_size;
+  return radix_len<double>(radix);
 }

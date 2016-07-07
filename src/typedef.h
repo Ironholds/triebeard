@@ -3,28 +3,14 @@
 #ifndef __RTRIE_TYPES__
 #define __RTRIE_TYPES__
 
-void finaliseRadixStr(r_trie <std::string>* radix_inst){
+template <typename T>
+void finaliseRadix(r_trie <T>* radix_inst){
   delete radix_inst;
 }
 
-typedef Rcpp::XPtr<r_trie <std::string>, Rcpp::PreserveStorage, finaliseRadixStr> XPtrRadixStr;
-
-void finaliseRadixInt(r_trie <int>* radix_inst){
-  delete radix_inst;
-}
-
-typedef Rcpp::XPtr<r_trie <int>, Rcpp::PreserveStorage, finaliseRadixInt> XPtrRadixInt;
-
-void finaliseRadixBool(r_trie <bool>* radix_inst){
-  delete radix_inst;
-}
-
-typedef Rcpp::XPtr<r_trie <bool>, Rcpp::PreserveStorage, finaliseRadixBool> XPtrRadixBool;
-
-void finaliseRadixDouble(r_trie <double>* radix_inst){
-  delete radix_inst;
-}
-
-typedef Rcpp::XPtr<r_trie <double>, Rcpp::PreserveStorage, finaliseRadixDouble> XPtrRadixDouble;
+typedef Rcpp::XPtr<r_trie <std::string>, Rcpp::PreserveStorage, finaliseRadix> XPtrRadixStr;
+typedef Rcpp::XPtr<r_trie <int>, Rcpp::PreserveStorage, finaliseRadix> XPtrRadixInt;
+typedef Rcpp::XPtr<r_trie <bool>, Rcpp::PreserveStorage, finaliseRadix> XPtrRadixBool;
+typedef Rcpp::XPtr<r_trie <double>, Rcpp::PreserveStorage, finaliseRadix> XPtrRadixDouble;
 
 #endif
