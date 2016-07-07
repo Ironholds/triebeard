@@ -5,6 +5,9 @@ using namespace Rcpp;
 //[[Rcpp::export]]
 CharacterVector longest_string(SEXP radix, CharacterVector to_match){
   r_trie <std::string>* rt_ptr = (r_trie <std::string> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   radix_tree<std::string, std::string>::iterator it;
 
   unsigned int input_size = to_match.size();
@@ -28,6 +31,9 @@ CharacterVector longest_string(SEXP radix, CharacterVector to_match){
 //[[Rcpp::export]]
 IntegerVector longest_integer(SEXP radix, CharacterVector to_match){
   r_trie <int>* rt_ptr = (r_trie <int> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   radix_tree<std::string, int>::iterator it;
 
   unsigned int input_size = to_match.size();
@@ -51,6 +57,9 @@ IntegerVector longest_integer(SEXP radix, CharacterVector to_match){
 //[[Rcpp::export]]
 NumericVector longest_numeric(SEXP radix, CharacterVector to_match){
   r_trie <double>* rt_ptr = (r_trie <double> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   radix_tree<std::string, double>::iterator it;
 
   unsigned int input_size = to_match.size();
@@ -74,6 +83,9 @@ NumericVector longest_numeric(SEXP radix, CharacterVector to_match){
 //[[Rcpp::export]]
 LogicalVector longest_logical(SEXP radix, CharacterVector to_match){
   r_trie <bool>* rt_ptr = (r_trie <bool> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   radix_tree<std::string, bool>::iterator it;
 
   unsigned int input_size = to_match.size();

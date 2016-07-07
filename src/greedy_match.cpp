@@ -5,6 +5,9 @@ using namespace Rcpp;
 //[[Rcpp::export]]
 List greedy_string(SEXP radix, CharacterVector to_match){
   r_trie <std::string>* rt_ptr = (r_trie <std::string> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   List output;
 
   unsigned int input_size = to_match.size();
@@ -35,6 +38,9 @@ List greedy_string(SEXP radix, CharacterVector to_match){
 //[[Rcpp::export]]
 List greedy_integer(SEXP radix, CharacterVector to_match){
   r_trie <int>* rt_ptr = (r_trie <int> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   List output;
 
   unsigned int input_size = to_match.size();
@@ -65,6 +71,9 @@ List greedy_integer(SEXP radix, CharacterVector to_match){
 //[[Rcpp::export]]
 List greedy_numeric(SEXP radix, CharacterVector to_match){
   r_trie <double>* rt_ptr = (r_trie <double> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   List output;
 
   unsigned int input_size = to_match.size();
@@ -95,6 +104,9 @@ List greedy_numeric(SEXP radix, CharacterVector to_match){
 //[[Rcpp::export]]
 List greedy_logical(SEXP radix, CharacterVector to_match){
   r_trie <bool>* rt_ptr = (r_trie <bool> *) R_ExternalPtrAddr(radix);
+  if (rt_ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
   List output;
 
   unsigned int input_size = to_match.size();
