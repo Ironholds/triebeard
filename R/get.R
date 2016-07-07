@@ -2,7 +2,7 @@
 #'@description "Getters" for the data stored in a trie object. \code{get_keys}
 #' gets the keys, \code{get_values} gets the values.
 #'
-#'@param trie A trie object.
+#'@param trie A trie object, created with \code{\link{create_trie}}.
 #'
 #'@return An atomic vector of keys or values stored in the trie.
 #'
@@ -44,7 +44,7 @@ get_keys.string_trie <- function(trie){
 
 #'@rdname getters
 #'@export
-get_keys.bool_trie <- function(trie){
+get_keys.logical_trie <- function(trie){
   return(get_keys_bool(trie))
 }
 
@@ -68,6 +68,6 @@ get_values.string_trie <- function(trie){
 
 #'@rdname getters
 #'@export
-get_values.bool_trie <- function(trie){
+get_values.logical_trie <- function(trie){
   return(get_values_bool(trie))
 }
