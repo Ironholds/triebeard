@@ -6,13 +6,22 @@
 \usage{
 longest_match(trie, to_match)
 }
+\arguments{
+\item{trie}{a trie object, created with \code{\link{create_trie}}}
+
+\item{to_match}{a character vector containing the strings to match against the
+trie's keys.}
+}
 \description{
-boop
+\code{longest_match} accepts a trie and a character vector
+and returns the value associated with whichever key had the \emph{longest match}
+to each entry in the character vector. A trie of "binary" and "bind", for example,
+with an entry-to-compare of "binder", will match to "bind".
 }
 \examples{
 trie <- create_trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
                    values = c(1, 2, 3, 4, 5, 6))
 longest_match(trie, "binder")
-rm(trie)
+
 }
 
