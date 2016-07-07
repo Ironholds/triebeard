@@ -3,12 +3,23 @@
 #'for matching) out of a provided character vector of keys, and a numeric,
 #'character, logical or integer vector of values (both the same length).
 #'
-#'@param keys a character vector containing the keys to match against
+#'@param keys a character vector containing the keys for the trie.
 #'
 #'@param values an atomic vector of any type, containing the values to pair with
 #'\code{keys}. Must be the same length as \code{keys}.
 #'
 #'@return a `trie` object.
+#'
+#'@seealso \code{\link{trie_add}} and \code{\link{trie_remove}} for adding to and removing
+#'from tries after their creation, and \code{\link{longest_match}} and other match functions
+#'for matching values against the keys of a created trie.
+#'
+#'@examples
+#'# An integer trie
+#'int_trie <- create_trie(keys = "foo", values = 1)
+#'
+#'# A string trie
+#'str_trie <- create_trie(keys = "foo", values = "bar")
 #'
 #'@export
 create_trie <- function(keys, values){

@@ -7,7 +7,7 @@
 create_trie(keys, values)
 }
 \arguments{
-\item{keys}{a character vector containing the keys to match against}
+\item{keys}{a character vector containing the keys for the trie.}
 
 \item{values}{an atomic vector of any type, containing the values to pair with
 \code{keys}. Must be the same length as \code{keys}.}
@@ -19,5 +19,18 @@ a `trie` object.
 \code{create_trie} creates a trie (a key-value store optimised
 for matching) out of a provided character vector of keys, and a numeric,
 character, logical or integer vector of values (both the same length).
+}
+\examples{
+# An integer trie
+int_trie <- create_trie(keys = "foo", values = 1)
+
+# A string trie
+str_trie <- create_trie(keys = "foo", values = "bar")
+
+}
+\seealso{
+\code{\link{trie_add}} and \code{\link{trie_remove}} for adding to and removing
+from tries after their creation, and \code{\link{longest_match}} and other match functions
+for matching values against the keys of a created trie.
 }
 
