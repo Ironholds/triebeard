@@ -33,22 +33,6 @@ remove_trie_logical <- function(trie, keys) {
     invisible(.Call('triebeard_remove_trie_logical', PACKAGE = 'triebeard', trie, keys))
 }
 
-trie_to_list_string <- function(radix) {
-    .Call('triebeard_trie_to_list_string', PACKAGE = 'triebeard', radix)
-}
-
-trie_to_list_integer <- function(radix) {
-    .Call('triebeard_trie_to_list_integer', PACKAGE = 'triebeard', radix)
-}
-
-trie_to_list_numeric <- function(radix) {
-    .Call('triebeard_trie_to_list_numeric', PACKAGE = 'triebeard', radix)
-}
-
-trie_to_list_logical <- function(radix) {
-    .Call('triebeard_trie_to_list_logical', PACKAGE = 'triebeard', radix)
-}
-
 radix_create_string <- function(keys, values) {
     .Call('triebeard_radix_create_string', PACKAGE = 'triebeard', keys, values)
 }
