@@ -145,3 +145,19 @@ prefix_logical <- function(radix, to_match) {
     .Call('triebeard_prefix_logical', PACKAGE = 'triebeard', radix, to_match)
 }
 
+trie_str_string <- function(radix) {
+    invisible(.Call('triebeard_trie_str_string', PACKAGE = 'triebeard', radix))
+}
+
+trie_str_integer <- function(radix) {
+    invisible(.Call('triebeard_trie_str_integer', PACKAGE = 'triebeard', radix))
+}
+
+trie_str_numeric <- function(radix) {
+    invisible(.Call('triebeard_trie_str_numeric', PACKAGE = 'triebeard', radix))
+}
+
+trie_str_logical <- function(radix) {
+    invisible(.Call('triebeard_trie_str_logical', PACKAGE = 'triebeard', radix))
+}
+

@@ -421,3 +421,43 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// trie_str_string
+void trie_str_string(SEXP radix);
+RcppExport SEXP triebeard_trie_str_string(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    trie_str_string(radix);
+    return R_NilValue;
+END_RCPP
+}
+// trie_str_integer
+void trie_str_integer(SEXP radix);
+RcppExport SEXP triebeard_trie_str_integer(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    trie_str_integer(radix);
+    return R_NilValue;
+END_RCPP
+}
+// trie_str_numeric
+void trie_str_numeric(SEXP radix);
+RcppExport SEXP triebeard_trie_str_numeric(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    trie_str_numeric(radix);
+    return R_NilValue;
+END_RCPP
+}
+// trie_str_logical
+void trie_str_logical(SEXP radix);
+RcppExport SEXP triebeard_trie_str_logical(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    trie_str_logical(radix);
+    return R_NilValue;
+END_RCPP
+}

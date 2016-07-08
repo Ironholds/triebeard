@@ -26,10 +26,22 @@ dim.trie <- function(x){
 #'@export
 str.trie <- function(object, ...){
   obj_len <- length(object)
-  cat(paste0(
-    class(object)[3],
-    ifelse(obj_len > 1, paste0(" [1:",obj_len, "] "), " "),
-    "f"
-  ))
+  type <- class(object)[3]
+  cat(paste0(type, "\n"))
+  
+  if (type == "string_trie")
+    trie_str_string(object)
+  else if (type == "integer_trie")
+    trie_str_integer(object)
+  else if (type == "numeric_trie")
+    trie_str_numeric(object)
+  else if (type == "logical_trie")
+    trie_str_logical(object)
+  
   return(invisible())
+}
+
+#'@export
+print.trie <- function(x, ...){
+  cat("A", class(x)[3], "object with", length(x), "entries\n")
 }
