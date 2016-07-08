@@ -1,4 +1,16 @@
-Version 0.1.0 [WIP]
+Version 0.2.0 [WIP]
+=================================
+FEATURES
+
+* tries can now be converted into lists through as.list()
+
+BUGS
+
+DEVELOPMENT
+* greedy and prefix matching should now be (slightly) faster.
+* Installed size has been slightly reduced, and the C++ code simplifed.
+
+Version 0.1.0
 =================================
 
 * Initial, GitHub-centred release
