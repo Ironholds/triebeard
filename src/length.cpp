@@ -1,12 +1,9 @@
 #include "r_trie.h"
 
 template <typename T>
-int radix_len(SEXP radix){
+static inline int radix_len(SEXP radix){
   r_trie <T>* rt_ptr = (r_trie <T> *) R_ExternalPtrAddr(radix);
-
-  if (rt_ptr == NULL){
-    stop("invalid trie object; pointer is NULL");
-  }
+  ptr_check(rt_ptr);
 
   return rt_ptr->radix_size;
 }

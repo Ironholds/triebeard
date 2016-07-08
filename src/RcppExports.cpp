@@ -97,6 +97,50 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// trie_to_list_string
+Rcpp::List trie_to_list_string(SEXP radix);
+RcppExport SEXP triebeard_trie_to_list_string(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(trie_to_list_string(radix));
+    return __result;
+END_RCPP
+}
+// trie_to_list_integer
+Rcpp::List trie_to_list_integer(SEXP radix);
+RcppExport SEXP triebeard_trie_to_list_integer(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(trie_to_list_integer(radix));
+    return __result;
+END_RCPP
+}
+// trie_to_list_numeric
+Rcpp::List trie_to_list_numeric(SEXP radix);
+RcppExport SEXP triebeard_trie_to_list_numeric(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(trie_to_list_numeric(radix));
+    return __result;
+END_RCPP
+}
+// trie_to_list_logical
+Rcpp::List trie_to_list_logical(SEXP radix);
+RcppExport SEXP triebeard_trie_to_list_logical(SEXP radixSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
+    __result = Rcpp::wrap(trie_to_list_logical(radix));
+    return __result;
+END_RCPP
+}
 // radix_create_string
 SEXP radix_create_string(std::vector < std::string > keys, std::vector < std::string > values);
 RcppExport SEXP triebeard_radix_create_string(SEXP keysSEXP, SEXP valuesSEXP) {

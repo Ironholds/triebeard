@@ -3,9 +3,7 @@
 //[[Rcpp::export]]
 void add_trie_string(SEXP trie, CharacterVector keys, CharacterVector values){
   r_trie <std::string>* rt_ptr = (r_trie <std::string> *) R_ExternalPtrAddr(trie);
-  if (rt_ptr == NULL){
-    stop("invalid trie object; pointer is NULL");
-  }
+  ptr_check(rt_ptr);
   unsigned int in_size = keys.size();
   for(unsigned int i = 0; i < in_size; i++){
     if((i % 10000) == 0){

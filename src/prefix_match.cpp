@@ -5,9 +5,7 @@ using namespace Rcpp;
 //[[Rcpp::export]]
 List prefix_string(SEXP radix, CharacterVector to_match){
   r_trie <std::string>* rt_ptr = (r_trie <std::string> *) R_ExternalPtrAddr(radix);
-  if (rt_ptr == NULL){
-    stop("invalid trie object; pointer is NULL");
-  }
+  ptr_check(rt_ptr);
   List output;
 
   unsigned int input_size = to_match.size();
