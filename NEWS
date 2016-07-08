@@ -3,6 +3,7 @@ Version 0.2.0 [WIP]
 FEATURES
 
 * tries can now be converted into lists through as.list()
+* We now have a str() method! That's nice.
 
 BUGS
 
