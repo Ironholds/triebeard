@@ -4,7 +4,7 @@ Fast key-value matching in R and Rcpp
 
 __Author:__ Oliver Keyes, Drew Schmidt, Yuuki Takano<br/>
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
-__Status:__ In development
+__Status:__ Stable
 
 [![Travis-CI Build Status](https://travis-ci.org/Ironholds/triebeard.svg?branch=master)](https://travis-ci.org/Ironholds/triebeard) ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/triebeard)
 
