@@ -495,42 +495,4 @@ radix_tree_node<K, T>* radix_tree<K, T>::find_node(const K &key, radix_tree_node
     return node;
 }
 
-/*
-
-(root)
-|
-|---------------
-|       |      |
-abcde   bcdef  c
-|   |   |      |------
-|   |   $3     |  |  |
-f   ge         d  e  $6
-|   |          |  |
-$1  $2         $4 $5
-
-find_node():
-  bcdef  -> $3
-  bcdefa -> bcdef
-  c      -> $6
-  cf     -> c
-  abch   -> abcde
-  abc    -> abcde
-  abcde  -> abcde
-  abcdef -> $1
-  abcdeh -> abcde
-  de     -> (root)
-
-
-(root)
-|
-abcd
-|
-$
-
-(root)
-|
-$
-
-*/
-
 #endif // RADIX_TREE_HPP

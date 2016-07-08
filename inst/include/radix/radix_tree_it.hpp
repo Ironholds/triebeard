@@ -104,14 +104,4 @@ radix_tree_it<K, T> radix_tree_it<K, T>::operator++ (int)
     return copy;
 }
 
-/*
-template <typename K, typename T>
-const radix_tree_it<K, T>& radix_tree_it<K, T>::operator-- ()
-{
-    assert(m_pointee != NULL);
-
-    return *this;
-}
-*/
-
 #endif // RADIX_TREE_IT
