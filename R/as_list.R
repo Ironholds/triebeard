@@ -1,4 +1,4 @@
 #'@export
-as.list.trie <- function(trie){
-  return(list(keys = get_keys(trie), values = get_values(trie)))
+as.list.trie <- function(x, ...){
+  return(list(keys = get_keys(x), values = get_values(x)))
 }
