@@ -4,6 +4,13 @@ using namespace Rcpp;
 
 #ifndef __RTRIE_CORE__
 #define __RTRIE_CORE__
+
+static inline void ptr_check(void *ptr){
+  if (ptr == NULL){
+    stop("invalid trie object; pointer is NULL");
+  }
+}
+
 template <class T>
 class r_trie {
 

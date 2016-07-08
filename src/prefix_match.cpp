@@ -5,12 +5,10 @@ using namespace Rcpp;
 //[[Rcpp::export]]
 List prefix_string(SEXP radix, CharacterVector to_match){
   r_trie <std::string>* rt_ptr = (r_trie <std::string> *) R_ExternalPtrAddr(radix);
-  if (rt_ptr == NULL){
-    stop("invalid trie object; pointer is NULL");
-  }
-  List output;
+  ptr_check(rt_ptr);
 
   unsigned int input_size = to_match.size();
+  List output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
     if((i % 10000) == 0){
@@ -22,7 +20,6 @@ List prefix_string(SEXP radix, CharacterVector to_match){
 
     if(to_match[i] == NA_STRING){
       holding.push_back(NA_STRING);
-      output.push_back(holding);
     } else {
       rt_ptr->radix.prefix_match(Rcpp::as<std::string>(to_match[i]), vec);
       for (it = vec.begin(); it != vec.end(); ++it) {
@@ -31,8 +28,8 @@ List prefix_string(SEXP radix, CharacterVector to_match){
       if(holding.size() == 0){
         holding.push_back(NA_STRING);
       }
-      output.push_back(holding);
     }
+    output[i] = holding;
   }
   return output;
 }
@@ -43,9 +40,9 @@ List prefix_integer(SEXP radix, CharacterVector to_match){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  List output;
 
   unsigned int input_size = to_match.size();
+  List output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
     if((i % 10000) == 0){
@@ -57,7 +54,6 @@ List prefix_integer(SEXP radix, CharacterVector to_match){
 
     if(to_match[i] == NA_STRING){
       holding.push_back(NA_INTEGER);
-      output.push_back(holding);
     } else {
       rt_ptr->radix.prefix_match(Rcpp::as<std::string>(to_match[i]), vec);
       for (it = vec.begin(); it != vec.end(); ++it) {
@@ -66,8 +62,8 @@ List prefix_integer(SEXP radix, CharacterVector to_match){
       if(holding.size() == 0){
         holding.push_back(NA_INTEGER);
       }
-      output.push_back(holding);
     }
+    output[i] = holding;
   }
   return output;
 }
@@ -78,9 +74,9 @@ List prefix_numeric(SEXP radix, CharacterVector to_match){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  List output;
 
   unsigned int input_size = to_match.size();
+  List output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
     if((i % 10000) == 0){
@@ -92,7 +88,6 @@ List prefix_numeric(SEXP radix, CharacterVector to_match){
 
     if(to_match[i] == NA_STRING){
       holding.push_back(NA_REAL);
-      output.push_back(holding);
     } else {
       rt_ptr->radix.prefix_match(Rcpp::as<std::string>(to_match[i]), vec);
       for (it = vec.begin(); it != vec.end(); ++it) {
@@ -101,8 +96,8 @@ List prefix_numeric(SEXP radix, CharacterVector to_match){
       if(holding.size() == 0){
         holding.push_back(NA_REAL);
       }
-      output.push_back(holding);
     }
+    output[i] = holding;
   }
   return output;
 }
@@ -113,9 +108,9 @@ List prefix_logical(SEXP radix, CharacterVector to_match){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  List output;
 
   unsigned int input_size = to_match.size();
+  List output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
     if((i % 10000) == 0){
@@ -127,7 +122,6 @@ List prefix_logical(SEXP radix, CharacterVector to_match){
 
     if(to_match[i] == NA_STRING){
       holding.push_back(NA_LOGICAL);
-      output.push_back(holding);
     } else {
       rt_ptr->radix.prefix_match(Rcpp::as<std::string>(to_match[i]), vec);
       for (it = vec.begin(); it != vec.end(); ++it) {
@@ -136,8 +130,8 @@ List prefix_logical(SEXP radix, CharacterVector to_match){
       if(holding.size() == 0){
         holding.push_back(NA_LOGICAL);
       }
-      output.push_back(holding);
     }
+    output[i] = holding;
   }
   return output;
 }
