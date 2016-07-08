@@ -5,7 +5,8 @@ Version: 0.1.0
 Author: Oliver Keyes [aut, cre], Drew Schmidt [aut], Yuuki Takano [cph]
 Maintainer: Oliver Keyes <ironholds@gmail.com>
 Description: Radix trees, or tries, are key-value data structures optimised for efficient lookups, similar in purpose
-             to hash tables. `triebeard` provides an implementation of radix trees for use in Rcpp code.
+             to hash tables. `triebeard` provides an implementation of radix trees for use in R programming and in
+             developing packages with Rcpp.
 License: MIT + file LICENSE
 LazyData: TRUE
 LinkingTo: Rcpp
@@ -16,3 +17,6 @@ Suggests: knitr,
     rmarkdown,
     testthat
 VignetteBuilder: knitr
+URL: https://github.com/Ironholds/triebeard/
+BugReports: https://github.com/Ironholds/triebeard/issues
+Date: 2016-07-07
