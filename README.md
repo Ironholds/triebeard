@@ -6,7 +6,7 @@ __Author:__ Oliver Keyes, Drew Schmidt, Yuuki Takano<br/>
 __License:__ [MIT](http://opensource.org/licenses/MIT)<br/>
 __Status:__ In development
 
-[![Travis-CI Build Status](https://travis-ci.org/Ironholds/triebeard.svg?branch=master)](https://travis-ci.org/Ironholds/humaniformat) ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/triebeard)
+[![Travis-CI Build Status](https://travis-ci.org/Ironholds/triebeard.svg?branch=master)](https://travis-ci.org/Ironholds/triebeard) ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/triebeard)
 
 ###Description
 
