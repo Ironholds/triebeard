@@ -7,6 +7,9 @@ void add_trie_string(SEXP trie, CharacterVector keys, CharacterVector values){
     stop("invalid trie object; pointer is NULL");
   }
   for(unsigned int i = 0; i < keys.size(); i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(keys[i] != NA_STRING && values[i] != NA_STRING){
       rt_ptr->insert_value(Rcpp::as<std::string>(keys[i]), Rcpp::as<std::string>(values[i]));
     }
@@ -21,6 +24,9 @@ void add_trie_integer(SEXP trie, CharacterVector keys, IntegerVector values){
     stop("invalid trie object; pointer is NULL");
   }
   for(unsigned int i = 0; i < keys.size(); i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(keys[i] != NA_STRING && values[i] != NA_INTEGER){
       rt_ptr->insert_value(Rcpp::as<std::string>(keys[i]), values[i]);
     }
@@ -35,6 +41,9 @@ void add_trie_numeric(SEXP trie, CharacterVector keys, NumericVector values){
     stop("invalid trie object; pointer is NULL");
   }
   for(unsigned int i = 0; i < keys.size(); i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(keys[i] != NA_STRING && values[i] != NA_REAL){
       rt_ptr->insert_value(Rcpp::as<std::string>(keys[i]), values[i]);
     }
@@ -49,6 +58,9 @@ void add_trie_logical(SEXP trie, CharacterVector keys, LogicalVector values){
     stop("invalid trie object; pointer is NULL");
   }
   for(unsigned int i = 0; i < keys.size(); i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(keys[i] != NA_STRING && values[i] != NA_LOGICAL){
       rt_ptr->insert_value(Rcpp::as<std::string>(keys[i]), values[i]);
     }

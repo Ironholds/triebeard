@@ -19,6 +19,9 @@ class r_trie {
 
     r_trie(std::vector < std::string > keys, std::vector < T > values){
       for(unsigned int i = 0; i < keys.size(); i++){
+        if((i % 10000) == 0){
+          Rcpp::checkUserInterrupt();
+        }
         radix[keys[i]] = values[i];
       }
       radix_size = size();
@@ -56,6 +59,9 @@ class r_trie {
 
     void remove_values(CharacterVector keys){
       for(unsigned int i = 0; i < keys.size(); i++){
+        if((i % 10000) == 0){
+          Rcpp::checkUserInterrupt();
+        }
         if(keys[i] != NA_STRING){
           radix.erase(Rcpp::as<std::string>(keys[i]));
         }

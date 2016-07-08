@@ -14,6 +14,9 @@ CharacterVector longest_string(SEXP radix, CharacterVector to_match){
   CharacterVector output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(to_match[i] == NA_STRING){
       output[i] = NA_STRING;
     } else {
@@ -40,6 +43,9 @@ IntegerVector longest_integer(SEXP radix, CharacterVector to_match){
   IntegerVector output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(to_match[i] == NA_STRING){
       output[i] = NA_INTEGER;
     } else {
@@ -66,6 +72,9 @@ NumericVector longest_numeric(SEXP radix, CharacterVector to_match){
   NumericVector output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(to_match[i] == NA_STRING){
       output[i] = NA_REAL;
     } else {
@@ -92,6 +101,9 @@ LogicalVector longest_logical(SEXP radix, CharacterVector to_match){
   LogicalVector output(input_size);
 
   for(unsigned int i = 0; i < input_size; i++){
+    if((i % 10000) == 0){
+      Rcpp::checkUserInterrupt();
+    }
     if(to_match[i] == NA_STRING){
       output[i] = NA_LOGICAL;
     } else {
