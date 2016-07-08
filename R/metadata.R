@@ -25,19 +25,16 @@ dim.trie <- function(x){
 
 #'@export
 str.trie <- function(object, ...){
-  obj_len <- length(object)
   type <- class(object)[3]
   cat(paste0(type, "\n"))
-  
-  if (type == "string_trie")
-    trie_str_string(object)
-  else if (type == "integer_trie")
-    trie_str_integer(object)
-  else if (type == "numeric_trie")
-    trie_str_numeric(object)
-  else if (type == "logical_trie")
-    trie_str_logical(object)
-  
+
+  switch(type,
+         "string_trie"  = {trie_str_string(object)},
+         "integer_trie" = {trie_str_integer(object)},
+         "numeric_trie" = {trie_str_numeric(object)},
+         "logical_trie" = {trie_str_logical(object)}
+         )
+
   return(invisible())
 }
 
