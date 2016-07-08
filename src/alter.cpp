@@ -6,7 +6,8 @@ void add_trie_string(SEXP trie, CharacterVector keys, CharacterVector values){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  for(unsigned int i = 0; i < keys.size(); i++){
+  unsigned int in_size = keys.size();
+  for(unsigned int i = 0; i < in_size; i++){
     if((i % 10000) == 0){
       Rcpp::checkUserInterrupt();
     }
@@ -23,7 +24,8 @@ void add_trie_integer(SEXP trie, CharacterVector keys, IntegerVector values){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  for(unsigned int i = 0; i < keys.size(); i++){
+  unsigned int in_size = keys.size();
+  for(unsigned int i = 0; i < in_size; i++){
     if((i % 10000) == 0){
       Rcpp::checkUserInterrupt();
     }
@@ -40,7 +42,8 @@ void add_trie_numeric(SEXP trie, CharacterVector keys, NumericVector values){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  for(unsigned int i = 0; i < keys.size(); i++){
+  unsigned int in_size = keys.size();
+  for(unsigned int i = 0; i < in_size; i++){
     if((i % 10000) == 0){
       Rcpp::checkUserInterrupt();
     }
@@ -57,7 +60,8 @@ void add_trie_logical(SEXP trie, CharacterVector keys, LogicalVector values){
   if (rt_ptr == NULL){
     stop("invalid trie object; pointer is NULL");
   }
-  for(unsigned int i = 0; i < keys.size(); i++){
+  unsigned int in_size = keys.size();
+  for(unsigned int i = 0; i < in_size; i++){
     if((i % 10000) == 0){
       Rcpp::checkUserInterrupt();
     }

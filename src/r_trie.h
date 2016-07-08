@@ -18,7 +18,8 @@ class r_trie {
     int radix_size;
 
     r_trie(std::vector < std::string > keys, std::vector < T > values){
-      for(unsigned int i = 0; i < keys.size(); i++){
+      unsigned int in_size = keys.size();
+      for(unsigned int i = 0; i < in_size; i++){
         if((i % 10000) == 0){
           Rcpp::checkUserInterrupt();
         }
@@ -58,7 +59,8 @@ class r_trie {
     }
 
     void remove_values(CharacterVector keys){
-      for(unsigned int i = 0; i < keys.size(); i++){
+      unsigned int in_size = keys.size();
+      for(unsigned int i = 0; i < in_size; i++){
         if((i % 10000) == 0){
           Rcpp::checkUserInterrupt();
         }
