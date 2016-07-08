@@ -4,7 +4,7 @@
 \alias{greedy_match}
 \title{Greedily match against a tree}
 \usage{
-greedy_match(trie, match_text)
+greedy_match(trie, to_match)
 }
 \arguments{
 \item{trie}{a trie object, created with \code{\link{create_trie}}}

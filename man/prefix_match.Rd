@@ -4,7 +4,7 @@
 \alias{prefix_match}
 \title{Find the prefix matches in a trie}
 \usage{
-prefix_match(trie, match_text)
+prefix_match(trie, to_match)
 }
 \arguments{
 \item{trie}{a trie object, created with \code{\link{create_trie}}}

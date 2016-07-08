@@ -74,3 +74,9 @@ if(it == vec.end()){
 ```
 
 Greedy matching matches very, very fuzzily (a value of 'bring', for example, will match 'blind', 'bind' and 'binary') and, syntactically, looks exactly the same as prefix-matching, albeit with `radix.greedy_match()` instead of `radix.prefix_match()`.
+
+
+### Other trie things
+
+If you have ideas for other trie-like structures, or functions that would be useful with *these* tries, the best approach
+is to either [request it](https://github.com/Ironholds/triebeard/issues) or [add it](https://github.com/Ironholds/triebeard/pulls)!
