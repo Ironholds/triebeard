@@ -26,8 +26,8 @@ We know the facility each code maps to, and we want to be able to map the labels
 
 ```{r, eval=FALSE}
 library(triebeard)
-trie <- create_trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
-                    values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
+trie <- trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
+             values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
 
 longest_match(trie = trie, to_match = labels)
 
@@ -59,8 +59,8 @@ These operations are very, very efficient. If we use longest-match as an example
 library(triebeard)
 library(microbenchmark)
 
-trie <- create_trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
-                    values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
+trie <- trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
+             values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
 
 labels <- rep(c("AO-1002", "AEO-1004", "AAI-1009", "AFT-1403", "QZ-9065", "QZ-1021", "RF-0901",
                 "AO-1099", "AFT-1101", "QZ-4933"), 100000)
@@ -81,8 +81,8 @@ There's always the possibility that (horror of horrors) you'll have to add or re
 You can also extract information from tries without using them, including the size (through `length`), the keys, or the values, and we can demonstrate all of those things nicely here:
 
 ```{r, eval=FALSE}
-trie <- create_trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
-                    values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
+trie <- trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
+             values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
 length(trie)
 [1] 6
 

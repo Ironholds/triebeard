@@ -11,7 +11,7 @@ get_keys(trie)
 get_values(trie)
 }
 \arguments{
-\item{trie}{A trie object, created with \code{\link{create_trie}}.}
+\item{trie}{A trie object, created with \code{\link{trie}}.}
 }
 \value{
 An atomic vector of keys or values stored in the trie.

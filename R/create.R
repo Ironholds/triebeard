@@ -16,13 +16,13 @@
 #'
 #'@examples
 #'# An integer trie
-#'int_trie <- create_trie(keys = "foo", values = 1)
+#'int_trie <- trie(keys = "foo", values = 1)
 #'
 #'# A string trie
-#'str_trie <- create_trie(keys = "foo", values = "bar")
+#'str_trie <- trie(keys = "foo", values = "bar")
 #'
 #'@export
-create_trie <- function(keys, values){
+trie <- function(keys, values){
   stopifnot(length(keys) == length(values))
   stopifnot(is.character(keys))
   output <- NULL

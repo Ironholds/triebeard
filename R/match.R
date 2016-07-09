@@ -4,13 +4,13 @@
 #'to each entry in the character vector. A trie of "binary" and "bind", for example,
 #'with an entry-to-compare of "binder", will match to "bind".
 #'
-#'@param trie a trie object, created with \code{\link{create_trie}}
+#'@param trie a trie object, created with \code{\link{trie}}
 #'
 #'@param to_match a character vector containing the strings to match against the
 #'trie's keys.
 #'
 #'@examples
-#'trie <- create_trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
+#'trie <- trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
 #'                    values = c("afford", "affair", "available", "binary", "bind", "blind"))
 #'longest_match(trie, "binder")
 #'
@@ -48,7 +48,7 @@ longest_match.logical_trie <- function(trie, to_match){
 #'and returns the values associated with any key that has a particular
 #'character vector entry as a prefix (see the examples).
 #'
-#'@param trie a trie object, created with \code{\link{create_trie}}
+#'@param trie a trie object, created with \code{\link{trie}}
 #'
 #'@param to_match a character vector containing the strings to check against the
 #'trie's keys.
@@ -58,7 +58,7 @@ longest_match.logical_trie <- function(trie, to_match){
 #'nothing was found, the entry will contain \code{NA}.
 #'
 #'@examples
-#'trie <- create_trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
+#'trie <- trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
 #'                    values = c("afford", "affair", "available", "binary", "bind", "blind"))
 #'prefix_match(trie, "aff")
 #'
@@ -96,7 +96,7 @@ prefix_match.logical_trie <- function(trie, to_match){
 #'and returns the values associated with any key that is "greedily" (read: fuzzily)
 #'matched against one of the character vector entries.
 #'
-#'@param trie a trie object, created with \code{\link{create_trie}}
+#'@param trie a trie object, created with \code{\link{trie}}
 #'
 #'@param to_match a character vector containing the strings to check against the
 #'trie's keys.
@@ -106,7 +106,7 @@ prefix_match.logical_trie <- function(trie, to_match){
 #'nothing was found, the entry will contain \code{NA}.
 #'
 #'@examples
-#'trie <- create_trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
+#'trie <- trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
 #'                    values = c("afford", "affair", "available", "binary", "bind", "blind"))
 #'greedy_match(trie, c("avoid", "bring", "attack"))
 #'

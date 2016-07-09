@@ -7,7 +7,7 @@
 greedy_match(trie, to_match)
 }
 \arguments{
-\item{trie}{a trie object, created with \code{\link{create_trie}}}
+\item{trie}{a trie object, created with \code{\link{trie}}}
 
 \item{to_match}{a character vector containing the strings to check against the
 trie's keys.}
@@ -23,7 +23,7 @@ and returns the values associated with any key that is "greedily" (read: fuzzily
 matched against one of the character vector entries.
 }
 \examples{
-trie <- create_trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
+trie <- trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
                    values = c("afford", "affair", "available", "binary", "bind", "blind"))
 greedy_match(trie, c("avoid", "bring", "attack"))
 

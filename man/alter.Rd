@@ -11,7 +11,7 @@ trie_add(trie, keys, values)
 trie_remove(trie, keys)
 }
 \arguments{
-\item{trie}{a trie object created with \code{\link{create_trie}}}
+\item{trie}{a trie object created with \code{\link{trie}}}
 
 \item{keys}{a character vector containing the keys of the entries to
 add (or remove). Entries with NA keys will not be added.}
@@ -27,7 +27,7 @@ nothing; the trie is modified in-place
 add or remove entries from tries, respectively.
 }
 \examples{
-trie <- create_trie("foo", "bar")
+trie <- trie("foo", "bar")
 length(trie)
 
 trie_add(trie, "baz", "qux")
@@ -38,6 +38,6 @@ length(trie)
 
 }
 \seealso{
-\code{\link{create_trie}} for creating tries in the first place.
+\code{\link{trie}} for creating tries in the first place.
 }
 

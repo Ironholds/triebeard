@@ -3,7 +3,7 @@
 #'@description \code{trie_add} and \code{trie_remove} allow you to
 #'add or remove entries from tries, respectively.
 #'
-#'@param trie a trie object created with \code{\link{create_trie}}
+#'@param trie a trie object created with \code{\link{trie}}
 #'
 #'@param keys a character vector containing the keys of the entries to
 #'add (or remove). Entries with NA keys will not be added.
@@ -14,7 +14,7 @@
 #'@return nothing; the trie is modified in-place
 #'
 #'@examples
-#'trie <- create_trie("foo", "bar")
+#'trie <- trie("foo", "bar")
 #'length(trie)
 #'
 #'trie_add(trie, "baz", "qux")
@@ -23,7 +23,7 @@
 #'trie_remove(trie, "baz")
 #'length(trie)
 #'
-#'@seealso \code{\link{create_trie}} for creating tries in the first place.
+#'@seealso \code{\link{trie}} for creating tries in the first place.
 #'@name alter
 #'@rdname alter
 #'@export
