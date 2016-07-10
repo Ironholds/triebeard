@@ -74,37 +74,49 @@ Unit: milliseconds
 
 I think we can call <300 milliseconds for a million matches against an entire set of possible values pretty fast.
 
-## Radix modification and metadata
+## Radix modification
 
-There's always the possibility that (horror of horrors) you'll have to add or remove entries from the trie. Fear not; you can do just that with `trie_add` and `trie_remove` respectively, both of which silently modify the trie they're provided with to add or remove whatever key-value pairs you provide.
+There's always the possibility that (horror of horrors) you'll have to add or remove entries from the trie. Fear not; you can do just that with `trie_add` and `trie_remove` respectively, both of which silently modify the trie they're provided with to add or remove whatever key-value pairs you provide:
 
-You can also extract information from tries without using them, including the size (through `length`), the keys, or the values, and we can demonstrate all of those things nicely here:
+```{r, eval=FALSE}
+to_match = "198.0.0.1"
+trie_inst <- trie(keys = "197", values = "fake range")
+
+longest_match(trie_inst, to_match)
+[1] NA
+
+trie_add(trie_inst, keys = "198", values = "home range")
+longest_match(trie_inst, to_match)
+[1] "home range"
+
+trie_remove(trie_inst, keys = "198")
+longest_match(trie_inst, to_match)
+[1] NA
+```
+
+## Metadata and coercion
+
+You can also extract information from tries without using them. `dim`, `str`, `print` and `length` all work for tries, and you can use `get_keys(trie)` and `get_values(trie)` to extract, respectively, the keys and values from a trie object.
+
+In addition, you can also coerce tries into other R data structures, specifically lists and data.frames:
 
 ```{r, eval=FALSE}
 trie <- trie(keys = c("AO", "AEO", "AAI", "AFT", "QZ", "RF"),
              values = c("Audobon", "Atlanta", "Ann Arbor", "Austin", "Queensland", "Raleigh"))
-length(trie)
-[1] 6
 
-get_keys(trie)
-[1] "AAI" "AEO" "AFT" "AO"  "QZ"  "RF" 
+str(as.data.frame(trie))
+'data.frame':	6 obs. of  2 variables:
+ $ keys  : chr  "AAI" "AEO" "AFT" "AO" ...
+ $ values: chr  "Ann Arbor" "Atlanta" "Austin" "Audobon" ...
 
-get_values(trie)
-[1] "Ann Arbor"  "Atlanta"    "Austin"     "Audobon"    "Queensland" "Raleigh" 
+str(as.list(trie))
 
-trie_add(trie, "BT", "Breton")
-length(trie)
-
-[1] 7
-
-trie_remove(trie, "BT")
-length(trie)
-
-[1] 6
+List of 2
+ $ keys  : chr [1:6] "AAI" "AEO" "AFT" "AO" ...
+ $ values: chr [1:6] "Ann Arbor" "Atlanta" "Austin" "Audobon" ...
 ```
 
-
-### Other trie things
+### Other trie operations
 
 If you have ideas for other trie-like structures, or functions that would be useful with *these* tries, the best approach
 is to either [request it](https://github.com/Ironholds/triebeard/issues) or [add it](https://github.com/Ironholds/triebeard/pulls)!
