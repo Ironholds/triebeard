@@ -24,6 +24,10 @@ By participating in this project you agree to abide by its terms.
 
 ###Installation
 
+The stable, CRAN-ready version can be retrieved with:
+
+    install.packages("triebeard")
+
 The latest version can be obtained via:
 
     devtools::install_github("ironholds/triebeard")
