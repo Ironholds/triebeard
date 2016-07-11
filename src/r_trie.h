@@ -17,7 +17,7 @@ class r_trie {
   public:
 
     int size(){
-      return std::distance(radix.begin(), radix.end());
+      return radix.size();
     }
 
     radix_tree<std::string, T> radix;
@@ -75,6 +75,7 @@ class r_trie {
           radix.erase(Rcpp::as<std::string>(keys[i]));
         }
       }
+      
       radix_size = size();
     }
 };

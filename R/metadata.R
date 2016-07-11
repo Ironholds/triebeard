@@ -40,5 +40,7 @@ str.trie <- function(object, ...){
 
 #'@export
 print.trie <- function(x, ...){
-  cat("A", class(x)[3], "object with", length(x), "entries\n")
+  len <- length(x)
+  entry_word <- ifelse(len != 1, "entries", "entry")
+  cat("A", class(x)[3], "object with", len, entry_word, "\n")
 }
