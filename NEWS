@@ -1,3 +1,8 @@
+Version 0.2.1
+=================================
+BUG FIXES
+* Fixed segfault when `trie_remove()` resulted in a 0 element trie.
+
 Version 0.2.0
 =================================
 FEATURES
