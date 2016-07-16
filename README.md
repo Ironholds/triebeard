@@ -10,8 +10,7 @@ __Status:__ Stable
 
 ###Description
 
-Tries, or [radix trees](https://en.wikipedia.org/wiki/Radix_tree), are key-value data structures optimised
-for matching. Or to put it another way, if you have a pile of labels that match to particular values, and you want to take label-based data and extract the equivalent value(s) for each entry, you can handle three million entries in a second.
+Tries, or [radix trees](https://en.wikipedia.org/wiki/Radix_tree), are key-value data structures optimised for very, very fast matching of the keys against user-provided data (and then the return of the associated values!)
 
 This is pretty useful in data cleaning and value extraction, and tries let you do it *really* efficiently. `triebeard` contains
 an implementation that can be used both when writing R, and when writing Rcpp (and imported and linked against, to boot). For more information see:
