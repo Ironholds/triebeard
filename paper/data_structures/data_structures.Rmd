@@ -10,11 +10,11 @@ author:
   - name: Second Author
     affiliation: Affiliation
 title:
-  formatted: "Deques, Trees and Rings: New Data Structures in the R Programming Language"
+  formatted: "Eats, Shoots and Tries: New Data Structures in the R Programming Language"
   # If you use tex in the formatted title, also supply version without
-  plain:     "Deques, Trees and Rings: New Data Structures in the R Programming Language"
+  plain:     "Eats, Shoots and Tries: New Data Structures in the R Programming Language"
   # For running headers, if needed
-  short:     "Deques, Trees and Rings"
+  short:     "Eats, Shoots and Tries"
 abstract: >
   The abstract of the article.
 keywords:
