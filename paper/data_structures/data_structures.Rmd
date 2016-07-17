@@ -16,7 +16,16 @@ title:
   # For running headers, if needed
   short:     "Eats, Shoots and Tries"
 abstract: >
-  The abstract of the article.
+  The R programming language is built around implementations of data structures common in computer science,
+  such as linked lists (R's 'lists') and vectors, as well as R-specific structures such as data.frames. There are
+  many more common structures, however, that R does not implement. There are many algorithmic problems that these
+  structures are particularly efficient at solving.
+  
+  Through R's package infrastructure, data structures such as hash tables, stacks and deques have been incorporated
+  into the language. In this paper we introduce the ring, triebeard and decker packages, which provide stacks, deques,
+  ring buffers and radix trees in R, and explore both how they work and how they compare to existing
+  implementations where applicable.
+  
 keywords:
   # at least one keyword must be supplied
   formatted: ["deque", "stack", "ring", "trie", "radix tree", "\\proglang{R}"]
@@ -32,19 +41,25 @@ This template demonstrates some of the basic latex you'll need to know to create
 
 # Background
 
+## Data structures
+
+## R's data structures
+
+## Expansions
+
 Don't use markdown, instead use the more precise latex commands:
 
 * \proglang{Java}
 * \pkg{plyr}
 * \code{print("abc")}
 
-# Structures
+# New structures
 
 ## Deques
 
 ## Stacks
 
-## Trees
+## Radix trees
 
 ## Rings
 
