@@ -1,0 +1,60 @@
+---
+author:
+  - name: FirstName LastName
+    affiliation: University/Company
+    address: >
+      First line
+      Second line
+    email: name@company.com
+    url: http://rstudio.com
+  - name: Second Author
+    affiliation: Affiliation
+title:
+  formatted: "Deques, Trees and Rings: New Data Structures in the R Programming Language"
+  # If you use tex in the formatted title, also supply version without
+  plain:     "Deques, Trees and Rings: New Data Structures in the R Programming Language"
+  # For running headers, if needed
+  short:     "Deques, Trees and Rings"
+abstract: >
+  The abstract of the article.
+keywords:
+  # at least one keyword must be supplied
+  formatted: ["deque", "stack", "ring", "trie", "radix tree", "\\proglang{R}"]
+  plain:     ["deque", "stack", "ring", "trie", "radix tree", "R"]
+preamble: >
+  \usepackage{amsmath}
+output: rticles::jss_article
+---
+
+# Introduction
+
+This template demonstrates some of the basic latex you'll need to know to create a JSS article.
+
+# Background
+
+Don't use markdown, instead use the more precise latex commands:
+
+* \proglang{Java}
+* \pkg{plyr}
+* \code{print("abc")}
+
+# Structures
+
+## Deques
+
+## Stacks
+
+## Trees
+
+## Rings
+
+Can be inserted in regular R markdown blocks.
+
+```{r}
+x <- 1:10
+x
+```
+
+# Conclusion
+
+# Acknowledgements
