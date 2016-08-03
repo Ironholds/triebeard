@@ -1,3 +1,10 @@
+Version 0.3.0
+=================================
+
+DEVELOPMENT
+
+* Internal refactoring using templates has drastically reduced the size of the codebase
+
 Version 0.2.1
 =================================
 BUG FIXES
