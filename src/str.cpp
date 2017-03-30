@@ -70,46 +70,46 @@ template <typename T>
 static inline void trie_str_generic(SEXP radix, std::string type_str){
   r_trie <T>* rt_ptr = (r_trie <T> *) R_ExternalPtrAddr(radix);
   ptr_check(rt_ptr);
-  
+
   int input_size = rt_ptr->size();
   int iter;
   int printed = 0;
-  
+
   Rcout << "  Keys:   chr [1:" << input_size << "] ";
   printed += 19 + numlen(input_size);
-  
+
   typename radix_tree< std::string, T >::iterator it;
-  
+
   iter = 0;
   for (it = rt_ptr->radix.begin(); it != rt_ptr->radix.end() && printed < PRINTMAX; ++it) {
     printed += it->first.length();
     if (iter > 0 && printed > PRINTMAX)
       break;
-    
+
     Rcout << "\"" << it->first << "\"" << " ";
-    
+
     iter++;
   }
-  
+
   if (iter < input_size)
     Rcout << "...";
   Rcout << std::endl;
   printed = 0;
   Rcout << "  Values: " << type_str << " [1:" << input_size << "] ";
   printed += 15 + type_str.length() + numlen(input_size);
-  
+
   iter = 0;
   for (it = rt_ptr->radix.begin(); it != rt_ptr->radix.end() && iter < 5; ++it) {
     printed += printsize(it->second);
     if (iter > 0 && printed > PRINTMAX)
       break;
-    
+
     valprinter(it->second);
     Rcout << " ";
-    
+
     iter++;
   }
-  
+
   if (iter < input_size)
     Rcout << "...";
   Rcout << std::endl;
@@ -119,7 +119,7 @@ static inline void trie_str_generic(SEXP radix, std::string type_str){
 
 //[[Rcpp::export]]
 void trie_str_string(SEXP radix){
-  trie_str_generic<std::string>(radix, "str");
+  trie_str_generic<std::string>(radix, "chr");
 }
 
 //[[Rcpp::export]]
