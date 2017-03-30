@@ -4,13 +4,17 @@
 \alias{longest_match}
 \title{Find the longest match in a trie}
 \usage{
-longest_match(trie, to_match)
+longest_match(trie, to_match, include_keys = FALSE)
 }
 \arguments{
 \item{trie}{a trie object, created with \code{\link{trie}}}
 
 \item{to_match}{a character vector containing the strings to match against the
 trie's keys.}
+
+\item{include_keys}{a logical value indicating whether to include the keys in the
+returned results or not. If TRUE (\emph{not} the default) the returned object will
+be a data.frame, rather than a vector.}
 }
 \description{
 \code{longest_match} accepts a trie and a character vector

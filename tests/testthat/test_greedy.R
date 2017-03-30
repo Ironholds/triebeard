@@ -36,6 +36,17 @@ testthat::test_that("greedy matching works for logical tries", {
   testthat::expect_true(output[[1]])
 })
 
+testthat::test_that("greedy matching works with include_keys", {
+  trie <- trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
+               values = c(FALSE, FALSE, TRUE, FALSE, TRUE, TRUE))
+  output <- greedy_match(trie, "avoid", TRUE)
+  holding = output[[1]]
+  testthat::expect_true(is.data.frame(holding))
+  testthat::expect_true(holding$match_value[1])
+  testthat::expect_equal(holding$match_key[1], "available")
+
+})
+
 testthat::test_that("greedy matching objects to non-trie objects", {
   expect_error(greedy_match("foo", "bar"))
 })

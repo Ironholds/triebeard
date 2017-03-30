@@ -81,20 +81,20 @@ get_values_logical <- function(radix) {
     .Call('triebeard_get_values_logical', PACKAGE = 'triebeard', radix)
 }
 
-greedy_string <- function(radix, to_match) {
-    .Call('triebeard_greedy_string', PACKAGE = 'triebeard', radix, to_match)
+greedy_string <- function(radix, to_match, include_keys) {
+    .Call('triebeard_greedy_string', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-greedy_integer <- function(radix, to_match) {
-    .Call('triebeard_greedy_integer', PACKAGE = 'triebeard', radix, to_match)
+greedy_integer <- function(radix, to_match, include_keys) {
+    .Call('triebeard_greedy_integer', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-greedy_numeric <- function(radix, to_match) {
-    .Call('triebeard_greedy_numeric', PACKAGE = 'triebeard', radix, to_match)
+greedy_numeric <- function(radix, to_match, include_keys) {
+    .Call('triebeard_greedy_numeric', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-greedy_logical <- function(radix, to_match) {
-    .Call('triebeard_greedy_logical', PACKAGE = 'triebeard', radix, to_match)
+greedy_logical <- function(radix, to_match, include_keys) {
+    .Call('triebeard_greedy_logical', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
 radix_len_string <- function(radix) {
@@ -113,36 +113,36 @@ radix_len_logical <- function(radix) {
     .Call('triebeard_radix_len_logical', PACKAGE = 'triebeard', radix)
 }
 
-longest_string <- function(radix, to_match) {
-    .Call('triebeard_longest_string', PACKAGE = 'triebeard', radix, to_match)
+longest_string <- function(radix, to_match, include_keys) {
+    .Call('triebeard_longest_string', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-longest_integer <- function(radix, to_match) {
-    .Call('triebeard_longest_integer', PACKAGE = 'triebeard', radix, to_match)
+longest_integer <- function(radix, to_match, include_keys) {
+    .Call('triebeard_longest_integer', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-longest_numeric <- function(radix, to_match) {
-    .Call('triebeard_longest_numeric', PACKAGE = 'triebeard', radix, to_match)
+longest_numeric <- function(radix, to_match, include_keys) {
+    .Call('triebeard_longest_numeric', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-longest_logical <- function(radix, to_match) {
-    .Call('triebeard_longest_logical', PACKAGE = 'triebeard', radix, to_match)
+longest_logical <- function(radix, to_match, include_keys) {
+    .Call('triebeard_longest_logical', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-prefix_string <- function(radix, to_match) {
-    .Call('triebeard_prefix_string', PACKAGE = 'triebeard', radix, to_match)
+prefix_string <- function(radix, to_match, include_keys) {
+    .Call('triebeard_prefix_string', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-prefix_integer <- function(radix, to_match) {
-    .Call('triebeard_prefix_integer', PACKAGE = 'triebeard', radix, to_match)
+prefix_integer <- function(radix, to_match, include_keys) {
+    .Call('triebeard_prefix_integer', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-prefix_numeric <- function(radix, to_match) {
-    .Call('triebeard_prefix_numeric', PACKAGE = 'triebeard', radix, to_match)
+prefix_numeric <- function(radix, to_match, include_keys) {
+    .Call('triebeard_prefix_numeric', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
-prefix_logical <- function(radix, to_match) {
-    .Call('triebeard_prefix_logical', PACKAGE = 'triebeard', radix, to_match)
+prefix_logical <- function(radix, to_match, include_keys) {
+    .Call('triebeard_prefix_logical', PACKAGE = 'triebeard', radix, to_match, include_keys)
 }
 
 trie_str_string <- function(radix) {

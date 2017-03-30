@@ -1,3 +1,8 @@
+Version 0.4.0 [WIP]
+=================================
+
+* Options to include the keys, as well as values, of matches have been incorporated (#13)
+
 Version 0.3.0
 =================================
 

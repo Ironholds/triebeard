@@ -4,13 +4,17 @@
 \alias{prefix_match}
 \title{Find the prefix matches in a trie}
 \usage{
-prefix_match(trie, to_match)
+prefix_match(trie, to_match, include_keys = FALSE)
 }
 \arguments{
 \item{trie}{a trie object, created with \code{\link{trie}}}
 
 \item{to_match}{a character vector containing the strings to check against the
 trie's keys.}
+
+\item{include_keys}{a logical value indicating whether to include the keys in the
+returned results or not. If TRUE (\emph{not} the default) the returned object will
+be a list of data.frames, rather than of vector.}
 }
 \value{
 a list, the length of \code{to_match}, with each entry containing any trie values

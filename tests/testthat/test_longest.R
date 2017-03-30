@@ -24,6 +24,16 @@ testthat::test_that("Longest matching works for logical tries", {
   testthat::expect_true(longest_match(trie, "binder"))
 })
 
-testthat::test_that("Longest matching objects to non-trie objects", {
+testthat::test_that("Longest matching understands the new include_keys param", {
+
+  trie <- trie(keys = c("afford", "affair", "available", "binary", "bind", "blind"),
+               values = c("afford", "affair", "available", "muffin", "bind", "frog"))
+  result <- longest_match(trie, "binaryness", TRUE)
+  testthat::expect_true(is.data.frame(result))
+  testthat::expect_equal(result$match_key, "binary")
+  testthat::expect_equal(result$match_value, "muffin")
+
+})
+testthat::test_that("Longest matching rejects non-trie objects", {
   expect_error(longest_match("foo", "bar"))
 })

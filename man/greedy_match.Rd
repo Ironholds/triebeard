@@ -4,18 +4,23 @@
 \alias{greedy_match}
 \title{Greedily match against a tree}
 \usage{
-greedy_match(trie, to_match)
+greedy_match(trie, to_match, include_keys = FALSE)
 }
 \arguments{
 \item{trie}{a trie object, created with \code{\link{trie}}}
 
 \item{to_match}{a character vector containing the strings to check against the
 trie's keys.}
+
+\item{include_keys}{a logical value indicating whether to include the keys in the
+returned results or not. If TRUE (\emph{not} the default) the returned object will
+be a list of data.frames, rather than of vectors.}
 }
 \value{
 a list, the length of \code{to_match}, with each entry containing any trie values
 where the \code{to_match} element greedily matches the associated key. In the case that
-nothing was found, the entry will contain \code{NA}.
+nothing was found, the entry will contain \code{NA}. In the case that \code{include_keys}
+is TRUE, the matching keys will also be included
 }
 \description{
 \code{greedy_match} accepts a trie and a character vector

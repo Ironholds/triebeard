@@ -234,50 +234,54 @@ BEGIN_RCPP
 END_RCPP
 }
 // greedy_string
-List greedy_string(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_greedy_string(SEXP radixSEXP, SEXP to_matchSEXP) {
+List greedy_string(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_greedy_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(greedy_string(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(greedy_string(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // greedy_integer
-List greedy_integer(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_greedy_integer(SEXP radixSEXP, SEXP to_matchSEXP) {
+List greedy_integer(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_greedy_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(greedy_integer(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(greedy_integer(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // greedy_numeric
-List greedy_numeric(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_greedy_numeric(SEXP radixSEXP, SEXP to_matchSEXP) {
+List greedy_numeric(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_greedy_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(greedy_numeric(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(greedy_numeric(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // greedy_logical
-List greedy_logical(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_greedy_logical(SEXP radixSEXP, SEXP to_matchSEXP) {
+List greedy_logical(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_greedy_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(greedy_logical(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(greedy_logical(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -326,98 +330,106 @@ BEGIN_RCPP
 END_RCPP
 }
 // longest_string
-CharacterVector longest_string(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_longest_string(SEXP radixSEXP, SEXP to_matchSEXP) {
+SEXP longest_string(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_longest_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(longest_string(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(longest_string(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // longest_integer
-IntegerVector longest_integer(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_longest_integer(SEXP radixSEXP, SEXP to_matchSEXP) {
+SEXP longest_integer(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_longest_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(longest_integer(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(longest_integer(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // longest_numeric
-NumericVector longest_numeric(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_longest_numeric(SEXP radixSEXP, SEXP to_matchSEXP) {
+SEXP longest_numeric(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_longest_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(longest_numeric(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(longest_numeric(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // longest_logical
-LogicalVector longest_logical(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_longest_logical(SEXP radixSEXP, SEXP to_matchSEXP) {
+SEXP longest_logical(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_longest_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(longest_logical(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(longest_logical(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // prefix_string
-List prefix_string(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_prefix_string(SEXP radixSEXP, SEXP to_matchSEXP) {
+List prefix_string(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_prefix_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(prefix_string(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(prefix_string(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // prefix_integer
-List prefix_integer(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_prefix_integer(SEXP radixSEXP, SEXP to_matchSEXP) {
+List prefix_integer(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_prefix_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(prefix_integer(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(prefix_integer(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // prefix_numeric
-List prefix_numeric(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_prefix_numeric(SEXP radixSEXP, SEXP to_matchSEXP) {
+List prefix_numeric(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_prefix_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(prefix_numeric(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(prefix_numeric(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
 // prefix_logical
-List prefix_logical(SEXP radix, CharacterVector to_match);
-RcppExport SEXP triebeard_prefix_logical(SEXP radixSEXP, SEXP to_matchSEXP) {
+List prefix_logical(SEXP radix, CharacterVector to_match, bool include_keys);
+RcppExport SEXP triebeard_prefix_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type to_match(to_matchSEXP);
-    rcpp_result_gen = Rcpp::wrap(prefix_logical(radix, to_match));
+    Rcpp::traits::input_parameter< bool >::type include_keys(include_keysSEXP);
+    rcpp_result_gen = Rcpp::wrap(prefix_logical(radix, to_match, include_keys));
     return rcpp_result_gen;
 END_RCPP
 }
