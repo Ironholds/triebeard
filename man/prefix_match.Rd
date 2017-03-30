@@ -32,4 +32,3 @@ prefix_match(trie, "aff")
 \code{\link{longest_match}} and \code{\link{greedy_match}}
 for longest and greedy matching, respectively.
 }
-

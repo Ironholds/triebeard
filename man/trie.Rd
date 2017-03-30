@@ -33,4 +33,3 @@ str_trie <- trie(keys = "foo", values = "bar")
 from tries after their creation, and \code{\link{longest_match}} and other match functions
 for matching values against the keys of a created trie.
 }
-

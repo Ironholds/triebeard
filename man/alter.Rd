@@ -40,4 +40,3 @@ length(trie)
 \seealso{
 \code{\link{trie}} for creating tries in the first place.
 }
-

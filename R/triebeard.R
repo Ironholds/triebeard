@@ -5,6 +5,6 @@
 #'
 #' @docType package
 #' @aliases triebeard triebeard-package
-#' @useDynLib triebeard
+#' @useDynLib triebeard, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
 NULL

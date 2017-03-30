@@ -4,9 +4,9 @@
 \name{triebeard}
 \alias{triebeard}
 \alias{triebeard-package}
+\alias{triebeard-package}
 \title{Radix trees in Rcpp}
 \description{
 This package provides access to Radix tree (or "trie") structures in Rcpp. At
 a later date it will hopefully provide them in R, too.
 }
-

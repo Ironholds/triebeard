@@ -28,4 +28,3 @@ longest_match(trie, "binder")
 \code{\link{prefix_match}} and \code{\link{greedy_match}}
 for prefix and greedy matching, respectively.
 }
-

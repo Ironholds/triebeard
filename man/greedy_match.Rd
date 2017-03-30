@@ -32,4 +32,3 @@ greedy_match(trie, c("avoid", "bring", "attack"))
 \code{\link{longest_match}} and \code{\link{prefix_match}}
 for longest and prefix matching, respectively.
 }
-
