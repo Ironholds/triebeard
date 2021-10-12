@@ -33,7 +33,7 @@ longest_match(trie = trie, to_match = labels)
 
  [1] "Audobon"    "Atlanta"    "Ann Arbor"  "Austin"     "Queensland" "Queensland" "Raleigh"    "Audobon"    "Austin"    
 [10] "Queensland"
-````
+```
 
 This pulls out, for each label, the trie value where the associated key has the longest prefix-match to the label. We can also just grab all the values where the key starts with, say, A:
 
