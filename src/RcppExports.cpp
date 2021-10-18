@@ -5,9 +5,14 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // add_trie_string
 void add_trie_string(SEXP trie, CharacterVector keys, CharacterVector values);
-RcppExport SEXP triebeard_add_trie_string(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_add_trie_string(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -19,7 +24,7 @@ END_RCPP
 }
 // add_trie_integer
 void add_trie_integer(SEXP trie, CharacterVector keys, IntegerVector values);
-RcppExport SEXP triebeard_add_trie_integer(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_add_trie_integer(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -31,7 +36,7 @@ END_RCPP
 }
 // add_trie_numeric
 void add_trie_numeric(SEXP trie, CharacterVector keys, NumericVector values);
-RcppExport SEXP triebeard_add_trie_numeric(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_add_trie_numeric(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -43,7 +48,7 @@ END_RCPP
 }
 // add_trie_logical
 void add_trie_logical(SEXP trie, CharacterVector keys, LogicalVector values);
-RcppExport SEXP triebeard_add_trie_logical(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_add_trie_logical(SEXP trieSEXP, SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -55,7 +60,7 @@ END_RCPP
 }
 // remove_trie_string
 void remove_trie_string(SEXP trie, CharacterVector keys);
-RcppExport SEXP triebeard_remove_trie_string(SEXP trieSEXP, SEXP keysSEXP) {
+RcppExport SEXP _triebeard_remove_trie_string(SEXP trieSEXP, SEXP keysSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -66,7 +71,7 @@ END_RCPP
 }
 // remove_trie_integer
 void remove_trie_integer(SEXP trie, CharacterVector keys);
-RcppExport SEXP triebeard_remove_trie_integer(SEXP trieSEXP, SEXP keysSEXP) {
+RcppExport SEXP _triebeard_remove_trie_integer(SEXP trieSEXP, SEXP keysSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -77,7 +82,7 @@ END_RCPP
 }
 // remove_trie_numeric
 void remove_trie_numeric(SEXP trie, CharacterVector keys);
-RcppExport SEXP triebeard_remove_trie_numeric(SEXP trieSEXP, SEXP keysSEXP) {
+RcppExport SEXP _triebeard_remove_trie_numeric(SEXP trieSEXP, SEXP keysSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -88,7 +93,7 @@ END_RCPP
 }
 // remove_trie_logical
 void remove_trie_logical(SEXP trie, CharacterVector keys);
-RcppExport SEXP triebeard_remove_trie_logical(SEXP trieSEXP, SEXP keysSEXP) {
+RcppExport SEXP _triebeard_remove_trie_logical(SEXP trieSEXP, SEXP keysSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type trie(trieSEXP);
@@ -99,7 +104,7 @@ END_RCPP
 }
 // radix_create_string
 SEXP radix_create_string(std::vector < std::string > keys, std::vector < std::string > values);
-RcppExport SEXP triebeard_radix_create_string(SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_radix_create_string(SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -111,7 +116,7 @@ END_RCPP
 }
 // radix_create_integer
 SEXP radix_create_integer(std::vector < std::string > keys, std::vector < int > values);
-RcppExport SEXP triebeard_radix_create_integer(SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_radix_create_integer(SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -123,7 +128,7 @@ END_RCPP
 }
 // radix_create_numeric
 SEXP radix_create_numeric(std::vector < std::string > keys, std::vector < double > values);
-RcppExport SEXP triebeard_radix_create_numeric(SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_radix_create_numeric(SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -135,7 +140,7 @@ END_RCPP
 }
 // radix_create_logical
 SEXP radix_create_logical(std::vector < std::string > keys, std::vector < bool > values);
-RcppExport SEXP triebeard_radix_create_logical(SEXP keysSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _triebeard_radix_create_logical(SEXP keysSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -147,7 +152,7 @@ END_RCPP
 }
 // get_keys_string
 std::vector < std::string > get_keys_string(SEXP radix);
-RcppExport SEXP triebeard_get_keys_string(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_keys_string(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -158,7 +163,7 @@ END_RCPP
 }
 // get_keys_integer
 std::vector < std::string > get_keys_integer(SEXP radix);
-RcppExport SEXP triebeard_get_keys_integer(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_keys_integer(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -169,7 +174,7 @@ END_RCPP
 }
 // get_keys_numeric
 std::vector < std::string > get_keys_numeric(SEXP radix);
-RcppExport SEXP triebeard_get_keys_numeric(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_keys_numeric(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -180,7 +185,7 @@ END_RCPP
 }
 // get_keys_logical
 std::vector < std::string > get_keys_logical(SEXP radix);
-RcppExport SEXP triebeard_get_keys_logical(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_keys_logical(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -191,7 +196,7 @@ END_RCPP
 }
 // get_values_string
 std::vector < std::string > get_values_string(SEXP radix);
-RcppExport SEXP triebeard_get_values_string(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_values_string(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -202,7 +207,7 @@ END_RCPP
 }
 // get_values_integer
 std::vector < int > get_values_integer(SEXP radix);
-RcppExport SEXP triebeard_get_values_integer(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_values_integer(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -213,7 +218,7 @@ END_RCPP
 }
 // get_values_numeric
 std::vector < double > get_values_numeric(SEXP radix);
-RcppExport SEXP triebeard_get_values_numeric(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_values_numeric(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -224,7 +229,7 @@ END_RCPP
 }
 // get_values_logical
 std::vector < bool > get_values_logical(SEXP radix);
-RcppExport SEXP triebeard_get_values_logical(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_get_values_logical(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -235,7 +240,7 @@ END_RCPP
 }
 // greedy_string
 List greedy_string(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_greedy_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_greedy_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -248,7 +253,7 @@ END_RCPP
 }
 // greedy_integer
 List greedy_integer(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_greedy_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_greedy_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -261,7 +266,7 @@ END_RCPP
 }
 // greedy_numeric
 List greedy_numeric(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_greedy_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_greedy_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -274,7 +279,7 @@ END_RCPP
 }
 // greedy_logical
 List greedy_logical(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_greedy_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_greedy_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -287,7 +292,7 @@ END_RCPP
 }
 // radix_len_string
 int radix_len_string(SEXP radix);
-RcppExport SEXP triebeard_radix_len_string(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_radix_len_string(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -298,7 +303,7 @@ END_RCPP
 }
 // radix_len_integer
 int radix_len_integer(SEXP radix);
-RcppExport SEXP triebeard_radix_len_integer(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_radix_len_integer(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -309,7 +314,7 @@ END_RCPP
 }
 // radix_len_numeric
 int radix_len_numeric(SEXP radix);
-RcppExport SEXP triebeard_radix_len_numeric(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_radix_len_numeric(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -320,7 +325,7 @@ END_RCPP
 }
 // radix_len_logical
 int radix_len_logical(SEXP radix);
-RcppExport SEXP triebeard_radix_len_logical(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_radix_len_logical(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -331,7 +336,7 @@ END_RCPP
 }
 // longest_string
 SEXP longest_string(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_longest_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_longest_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -344,7 +349,7 @@ END_RCPP
 }
 // longest_integer
 SEXP longest_integer(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_longest_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_longest_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -357,7 +362,7 @@ END_RCPP
 }
 // longest_numeric
 SEXP longest_numeric(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_longest_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_longest_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -370,7 +375,7 @@ END_RCPP
 }
 // longest_logical
 SEXP longest_logical(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_longest_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_longest_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -383,7 +388,7 @@ END_RCPP
 }
 // prefix_string
 List prefix_string(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_prefix_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_prefix_string(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -396,7 +401,7 @@ END_RCPP
 }
 // prefix_integer
 List prefix_integer(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_prefix_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_prefix_integer(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -409,7 +414,7 @@ END_RCPP
 }
 // prefix_numeric
 List prefix_numeric(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_prefix_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_prefix_numeric(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -422,7 +427,7 @@ END_RCPP
 }
 // prefix_logical
 List prefix_logical(SEXP radix, CharacterVector to_match, bool include_keys);
-RcppExport SEXP triebeard_prefix_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
+RcppExport SEXP _triebeard_prefix_logical(SEXP radixSEXP, SEXP to_matchSEXP, SEXP include_keysSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -435,7 +440,7 @@ END_RCPP
 }
 // trie_str_string
 void trie_str_string(SEXP radix);
-RcppExport SEXP triebeard_trie_str_string(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_trie_str_string(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
@@ -445,7 +450,7 @@ END_RCPP
 }
 // trie_str_integer
 void trie_str_integer(SEXP radix);
-RcppExport SEXP triebeard_trie_str_integer(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_trie_str_integer(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
@@ -455,7 +460,7 @@ END_RCPP
 }
 // trie_str_numeric
 void trie_str_numeric(SEXP radix);
-RcppExport SEXP triebeard_trie_str_numeric(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_trie_str_numeric(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
@@ -465,11 +470,60 @@ END_RCPP
 }
 // trie_str_logical
 void trie_str_logical(SEXP radix);
-RcppExport SEXP triebeard_trie_str_logical(SEXP radixSEXP) {
+RcppExport SEXP _triebeard_trie_str_logical(SEXP radixSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type radix(radixSEXP);
     trie_str_logical(radix);
     return R_NilValue;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_triebeard_add_trie_string", (DL_FUNC) &_triebeard_add_trie_string, 3},
+    {"_triebeard_add_trie_integer", (DL_FUNC) &_triebeard_add_trie_integer, 3},
+    {"_triebeard_add_trie_numeric", (DL_FUNC) &_triebeard_add_trie_numeric, 3},
+    {"_triebeard_add_trie_logical", (DL_FUNC) &_triebeard_add_trie_logical, 3},
+    {"_triebeard_remove_trie_string", (DL_FUNC) &_triebeard_remove_trie_string, 2},
+    {"_triebeard_remove_trie_integer", (DL_FUNC) &_triebeard_remove_trie_integer, 2},
+    {"_triebeard_remove_trie_numeric", (DL_FUNC) &_triebeard_remove_trie_numeric, 2},
+    {"_triebeard_remove_trie_logical", (DL_FUNC) &_triebeard_remove_trie_logical, 2},
+    {"_triebeard_radix_create_string", (DL_FUNC) &_triebeard_radix_create_string, 2},
+    {"_triebeard_radix_create_integer", (DL_FUNC) &_triebeard_radix_create_integer, 2},
+    {"_triebeard_radix_create_numeric", (DL_FUNC) &_triebeard_radix_create_numeric, 2},
+    {"_triebeard_radix_create_logical", (DL_FUNC) &_triebeard_radix_create_logical, 2},
+    {"_triebeard_get_keys_string", (DL_FUNC) &_triebeard_get_keys_string, 1},
+    {"_triebeard_get_keys_integer", (DL_FUNC) &_triebeard_get_keys_integer, 1},
+    {"_triebeard_get_keys_numeric", (DL_FUNC) &_triebeard_get_keys_numeric, 1},
+    {"_triebeard_get_keys_logical", (DL_FUNC) &_triebeard_get_keys_logical, 1},
+    {"_triebeard_get_values_string", (DL_FUNC) &_triebeard_get_values_string, 1},
+    {"_triebeard_get_values_integer", (DL_FUNC) &_triebeard_get_values_integer, 1},
+    {"_triebeard_get_values_numeric", (DL_FUNC) &_triebeard_get_values_numeric, 1},
+    {"_triebeard_get_values_logical", (DL_FUNC) &_triebeard_get_values_logical, 1},
+    {"_triebeard_greedy_string", (DL_FUNC) &_triebeard_greedy_string, 3},
+    {"_triebeard_greedy_integer", (DL_FUNC) &_triebeard_greedy_integer, 3},
+    {"_triebeard_greedy_numeric", (DL_FUNC) &_triebeard_greedy_numeric, 3},
+    {"_triebeard_greedy_logical", (DL_FUNC) &_triebeard_greedy_logical, 3},
+    {"_triebeard_radix_len_string", (DL_FUNC) &_triebeard_radix_len_string, 1},
+    {"_triebeard_radix_len_integer", (DL_FUNC) &_triebeard_radix_len_integer, 1},
+    {"_triebeard_radix_len_numeric", (DL_FUNC) &_triebeard_radix_len_numeric, 1},
+    {"_triebeard_radix_len_logical", (DL_FUNC) &_triebeard_radix_len_logical, 1},
+    {"_triebeard_longest_string", (DL_FUNC) &_triebeard_longest_string, 3},
+    {"_triebeard_longest_integer", (DL_FUNC) &_triebeard_longest_integer, 3},
+    {"_triebeard_longest_numeric", (DL_FUNC) &_triebeard_longest_numeric, 3},
+    {"_triebeard_longest_logical", (DL_FUNC) &_triebeard_longest_logical, 3},
+    {"_triebeard_prefix_string", (DL_FUNC) &_triebeard_prefix_string, 3},
+    {"_triebeard_prefix_integer", (DL_FUNC) &_triebeard_prefix_integer, 3},
+    {"_triebeard_prefix_numeric", (DL_FUNC) &_triebeard_prefix_numeric, 3},
+    {"_triebeard_prefix_logical", (DL_FUNC) &_triebeard_prefix_logical, 3},
+    {"_triebeard_trie_str_string", (DL_FUNC) &_triebeard_trie_str_string, 1},
+    {"_triebeard_trie_str_integer", (DL_FUNC) &_triebeard_trie_str_integer, 1},
+    {"_triebeard_trie_str_numeric", (DL_FUNC) &_triebeard_trie_str_numeric, 1},
+    {"_triebeard_trie_str_logical", (DL_FUNC) &_triebeard_trie_str_logical, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_triebeard(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }
