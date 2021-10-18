@@ -1,14 +1,17 @@
-Version 0.4.0 [WIP]
+
+
+Version 0.3.1
 =================================
 
-* Options to include the keys, as well as values, of matches have been incorporated (#13)
+MINOR
 
-Version 0.3.0
-=================================
+* Accomodated knitr breaking change
+* Updated maintainer
 
 DEVELOPMENT
 
 * Internal refactoring using templates has drastically reduced the size of the codebase
+* Options to include the keys, as well as values, of matches have been incorporated (#13)
 
 Version 0.2.1
 =================================

@@ -1,7 +1,7 @@
 Package: triebeard
 Type: Package
 Title: 'Radix' Trees in 'Rcpp'
-Version: 0.2.2
+Version: 0.3.1
 Author: Os Keyes [aut, cre], Drew Schmidt [aut], Yuuki Takano [cph]
 Maintainer: Os Keyes <ironholds@gmail.com>
 Description: 'Radix trees', or 'tries', are key-value data structures optimised for efficient lookups, similar in purpose
