@@ -2,7 +2,7 @@
 
 Fast key-value matching in R and Rcpp
 
-__Author:__ Oliver Keyes, Drew Schmidt, Yuuki Takano<br/>
+__Author:__ Os Keyes, Drew Schmidt, Yuuki Takano<br/>
 __License:__ [MIT](https://opensource.org/licenses/MIT)<br/>
 __Status:__ Stable
 
@@ -16,7 +16,7 @@ This is pretty useful in data cleaning and value extraction, and tries let you d
 an implementation that can be used both when writing R, and when writing Rcpp (and imported and linked against, to boot). For more information see:
 
 1. The [vignette on Rcpp usage](https://CRAN.R-project.org/package=triebeard/vignettes/rcpp_radix.html);
-2. The [vignette on R usage](https://CRAN.R-project.org/package=triebeardtriebeard/vignettes/r_radix.html).
+2. The [vignette on R usage](https://CRAN.R-project.org/package=triebeard/vignettes/r_radix.html).
 
 Please note that this project is released with a [Contributor Code of Conduct](https://github.com/Ironholds/triebeard/blob/master/CONDUCT.md).
 By participating in this project you agree to abide by its terms.
